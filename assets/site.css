@@ -35,7 +35,10 @@ a:hover { text-decoration: none; }
 
 /* ── Emblème ─────────────────────────────────────────────────── */
 
-.embleme { width: 2.4rem; height: 2.4rem; fill: currentColor; flex: none; }
+/* Les tracés portent leurs propres remplissages — vif en `currentColor`,
+   ombres en noir — parce que l'emblème est taillé et non colorié. Une règle
+   `fill` ici écraserait les facettes. */
+.embleme { width: 2.4rem; height: 2.4rem; flex: none; }
 
 .marque {
   display: flex;
