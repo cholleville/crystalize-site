@@ -35,10 +35,17 @@ a:hover { text-decoration: none; }
 
 /* ── Emblème ─────────────────────────────────────────────────── */
 
-/* Les tracés portent leurs propres remplissages — vif en `currentColor`,
-   ombres en noir — parce que l'emblème est taillé et non colorié. Une règle
-   `fill` ici écraserait les facettes. */
+/* Deux marques distinctes, et il ne faut pas les confondre : le cristal
+   est celle du studio, la synapse celle de l'application. */
 .embleme { width: 2.4rem; height: 2.4rem; flex: none; }
+
+/* Les tracés de la synapse portent leurs propres remplissages — vif en
+   `currentColor`, ombres en noir — parce que l'emblème est taillé et non
+   colorié. Une règle `fill` ici écraserait les facettes. */
+.embleme-synaptika { width: 3.4rem; height: 3.4rem; flex: none; color: var(--accent); }
+
+.titre-produit { display: flex; align-items: center; gap: 1rem; margin-top: 2.5rem; }
+.titre-produit h1 { margin: 0; }
 
 .marque {
   display: flex;
