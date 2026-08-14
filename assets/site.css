@@ -134,6 +134,7 @@ h3 { font-size: 0.95rem; margin-top: 1.75rem; }
 .carte:hover { border-color: var(--bordure-vive); transform: translateY(-2px); }
 .carte h3 { margin: 0 0 0.35rem; color: var(--accent); font-size: 1.05rem; }
 .carte p { margin: 0; color: var(--doux); font-size: 0.9rem; }
+.carte__accroche { color: var(--texte) !important; margin-bottom: 0.5rem !important; }
 
 table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
 th, td {
