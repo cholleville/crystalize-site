@@ -47,20 +47,42 @@ a:hover { text-decoration: none; }
 .titre-produit { display: flex; align-items: center; gap: 1rem; margin-top: 2.5rem; }
 .titre-produit h1 { margin: 0; }
 
-.marque {
+/* ── Le bandeau de tête ───────────────────────────────────────────
+   Le nom à gauche, la marque à droite : la disposition de la bannière
+   du Play Console, pour que le studio se présente partout pareil. */
+
+.bandeau {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 2rem 0 0;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 2.5rem 0 0.5rem;
   color: var(--accent);
   text-decoration: none;
 }
-.marque span {
-  font-size: 0.8rem;
-  letter-spacing: 0.32em;
+
+.bandeau__mot { max-width: min(19rem, 58vw); height: auto; }
+.bandeau__marque { height: clamp(3.4rem, 11vw, 4.6rem); width: auto; flex: none; }
+
+/* Le nom d'un produit, quand aucune image de marque n'existe pour lui. */
+.bandeau__nom {
+  font-size: clamp(1.5rem, 6vw, 2.2rem);
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--doux);
+  font-weight: 600;
+  color: var(--accent);
+  line-height: 1;
 }
+.bandeau__editeur {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--faible);
+  text-decoration: none;
+}
+.bandeau__editeur:hover { color: var(--doux); }
 
 /* ── Titres ──────────────────────────────────────────────────── */
 
