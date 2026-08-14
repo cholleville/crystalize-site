@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Myoforge — Politique de confidentialité</title>
+    <link rel="stylesheet" href="/assets/site.css" />
+    <style>
+      :root {
+        --fond: #04060c;
+        --panneau: #0a0f1a;
+        --texte: #e8eef7;
+        --doux: #9aa9bd;
+        --accent: #4cc9f0;
+        --bordure: #1b2536;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        padding: 2rem 1.25rem 5rem;
+        background: var(--fond);
+        color: var(--texte);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        line-height: 1.65;
+      }
+      main { max-width: 46rem; margin: 0 auto; }
+      h1 { font-size: 1.75rem; letter-spacing: -0.01em; margin-bottom: 0.25rem; }
+      h2 {
+        font-size: 1.1rem;
+        margin-top: 2.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--bordure);
+        color: var(--accent);
+      }
+      h3 { font-size: 0.95rem; margin-top: 1.75rem; }
+      .maj { color: var(--doux); font-size: 0.85rem; margin-top: 0; }
+      .encadre {
+        background: var(--panneau);
+        border: 1px solid var(--bordure);
+        border-radius: 0.75rem;
+        padding: 1rem 1.25rem;
+        margin: 1.5rem 0;
+      }
+      table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+      th, td { text-align: left; padding: 0.6rem 0.5rem; border-bottom: 1px solid var(--bordure); vertical-align: top; }
+      th { color: var(--doux); font-weight: 600; }
+      a { color: var(--accent); }
+      code { background: var(--panneau); padding: 0.1rem 0.35rem; border-radius: 0.25rem; font-size: 0.9em; }
+      .langues { display: flex; gap: 0.5rem; margin-bottom: 2rem; }
+      .langues button {
+        background: transparent;
+        border: 1px solid var(--bordure);
+        color: var(--doux);
+        border-radius: 999px;
+        padding: 0.35rem 0.9rem;
+        cursor: pointer;
+        font-size: 0.85rem;
+      }
+      .langues button[aria-pressed='true'] { border-color: var(--accent); color: var(--accent); }
+      [lang]:not([lang='']) { display: none; }
+      [lang].actif { display: block; }
+      .arelire { border-left: 3px solid #f0b429; padding-left: 1rem; color: #f0b429; }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <header class="bandeau">
+        <div>
+          <span class="bandeau__nom">Myoforge</span>
+          <a class="bandeau__editeur" href="/">par Crystalize Studio</a>
+        </div>
+        <svg class="bandeau__marque embleme-myoforge" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M 68.000,44.000 L 59.000,59.588 L 41.000,59.588 L 32.000,44.000 L 41.000,28.412 L 59.000,28.412 Z M 62.500,44.000 L 56.250,54.825 L 43.750,54.825 L 37.500,44.000 L 43.750,33.175 L 56.250,33.175 Z" fill-rule="evenodd" fill="currentColor"/>
+          <path d="M 68.000,44.000 L 59.000,59.588 L 56.250,54.825 L 62.500,44.000 Z" fill="#000" opacity="0.491"/>
+          <path d="M 59.000,59.588 L 41.000,59.588 L 43.750,54.825 L 56.250,54.825 Z" fill="#000" opacity="0.427"/>
+          <path d="M 41.000,59.588 L 32.000,44.000 L 37.500,44.000 L 43.750,54.825 Z" fill="#000" opacity="0.185"/>
+          <path d="M 41.000,28.412 L 59.000,28.412 L 56.250,33.175 L 43.750,33.175 Z" fill="#000" opacity="0.073"/>
+          <path d="M 59.000,28.412 L 68.000,44.000 L 62.500,44.000 L 56.250,33.175 Z" fill="#000" opacity="0.315"/>
+          <path d="M 62.500,44.000 L 68.000,44.000" fill="none" stroke="#000" stroke-width="0.7" stroke-linecap="round" opacity="0.500"/>
+          <path d="M 56.250,54.825 L 59.000,59.588" fill="none" stroke="#000" stroke-width="0.7" stroke-linecap="round" opacity="0.500"/>
+          <path d="M 43.750,54.825 L 41.000,59.588" fill="none" stroke="#000" stroke-width="0.7" stroke-linecap="round" opacity="0.500"/>
+          <path d="M 37.500,44.000 L 32.000,44.000" fill="none" stroke="#000" stroke-width="0.7" stroke-linecap="round" opacity="0.500"/>
+          <path d="M 43.750,33.175 L 41.000,28.412" fill="none" stroke="#000" stroke-width="0.7" stroke-linecap="round" opacity="0.500"/>
+          <path d="M 56.250,33.175 L 59.000,28.412" fill="none" stroke="#000" stroke-width="0.7" stroke-linecap="round" opacity="0.500"/>
+          <path d="M 60.600,44.000 L 55.300,53.180 L 44.700,53.180 L 39.400,44.000 L 44.700,34.820 L 55.300,34.820 Z M 59.400,44.000 L 54.700,52.141 L 45.300,52.141 L 40.600,44.000 L 45.300,35.859 L 54.700,35.859 Z" fill-rule="evenodd" fill="currentColor" opacity="0.400"/>
+          <path d="M 56.000,63.588 L 54.000,79.000 A 4 4 0 0 1 46.000,79.000 L 44.000,63.588 Z" fill="currentColor"/>
+          <path d="M 30.036,39.402 L 17.689,29.964 A 4 4 0 0 1 21.689,23.036 L 36.036,29.010 Z" fill="currentColor"/>
+          <path d="M 63.964,29.010 L 78.311,23.036 A 4 4 0 0 1 82.311,29.964 L 69.964,39.402 Z" fill="currentColor"/>
+          <path d="M 51.080,63.588 L 50.720,79.000 L 52.480,79.000 L 53.720,63.588 Z" fill="#000" opacity="0.248"/>
+          <path d="M 53.720,63.588 L 52.480,79.000 L 54.000,79.000 L 56.000,63.588 Z" fill="#000" opacity="0.550"/>
+          <path d="M 32.496,35.141 L 19.329,27.124 L 18.449,28.648 L 31.176,37.427 Z" fill="#000" opacity="0.248"/>
+          <path d="M 31.176,37.427 L 18.449,28.648 L 17.689,29.964 L 30.036,39.402 Z" fill="#000" opacity="0.550"/>
+          <path d="M 67.504,35.141 L 80.671,27.124 L 81.551,28.648 L 68.824,37.427 Z" fill="#000" opacity="0.248"/>
+          <path d="M 68.824,37.427 L 81.551,28.648 L 82.311,29.964 L 69.964,39.402 Z" fill="#000" opacity="0.550"/>
+          <path d="M 56.500,44.000 L 53.250,49.629 L 46.750,49.629 L 43.500,44.000 L 46.750,38.371 L 53.250,38.371 Z" fill="currentColor"/>
+          <path d="M 50,44.000 L 56.500,44.000 L 53.250,49.629 Z" fill="#000" opacity="0.609"/>
+          <path d="M 50,44.000 L 53.250,49.629 L 46.750,49.629 Z" fill="#000" opacity="0.529"/>
+          <path d="M 50,44.000 L 46.750,49.629 L 43.500,44.000 Z" fill="#000" opacity="0.230"/>
+          <path d="M 50,44.000 L 46.750,38.371 L 53.250,38.371 Z" fill="#000" opacity="0.091"/>
+          <path d="M 50,44.000 L 53.250,38.371 L 56.500,44.000 Z" fill="#000" opacity="0.390"/>
+          <g opacity="0.72">
+          <path d="M 47.960,65.438 L 48.800,76.800" fill="none" stroke="#000" stroke-width="1.15" stroke-linecap="round"/>
+          <path d="M 46.910,65.438 a 1.05,1.05 0 1,0 2.100,0 a 1.05,1.05 0 1,0 -2.100,0 Z" fill="#000"/>
+          <path d="M 47.300,76.800 a 1.5,1.5 0 1,0 3.000,0 a 1.5,1.5 0 1,0 -3.000,0 Z" fill="#000"/>
+          <path d="M 32.454,31.514 L 22.194,26.561" fill="none" stroke="#000" stroke-width="1.15" stroke-linecap="round"/>
+          <path d="M 31.404,31.514 a 1.05,1.05 0 1,0 2.100,0 a 1.05,1.05 0 1,0 -2.100,0 Z" fill="#000"/>
+          <path d="M 20.694,26.561 a 1.5,1.5 0 1,0 3.000,0 a 1.5,1.5 0 1,0 -3.000,0 Z" fill="#000"/>
+          <path d="M 67.546,31.514 L 77.806,26.561" fill="none" stroke="#000" stroke-width="1.15" stroke-linecap="round"/>
+          <path d="M 66.496,31.514 a 1.05,1.05 0 1,0 2.100,0 a 1.05,1.05 0 1,0 -2.100,0 Z" fill="#000"/>
+          <path d="M 76.306,26.561 a 1.5,1.5 0 1,0 3.000,0 a 1.5,1.5 0 1,0 -3.000,0 Z" fill="#000"/>
+          </g>
+          <path d="M 48.900,48.391 a 1.1,1.1 0 1,0 2.200,0 a 1.1,1.1 0 1,0 -2.200,0 Z" fill="currentColor"/>
+          <path d="M 45.097,41.805 a 1.1,1.1 0 1,0 2.200,0 a 1.1,1.1 0 1,0 -2.200,0 Z" fill="currentColor"/>
+          <path d="M 52.703,41.805 a 1.1,1.1 0 1,0 2.200,0 a 1.1,1.1 0 1,0 -2.200,0 Z" fill="currentColor"/>
+        </svg>
+      </header>
+      <div class="langues">
+        <button type="button" data-langue="fr" aria-pressed="true">Français</button>
+        <button type="button" data-langue="en" aria-pressed="false">English</button>
+      </div>
+
+      <!-- ══════════════════════════════════════════════════════════ -->
+      <section lang="fr" class="actif">
+        <h1>Politique de confidentialité</h1>
+        <p class="maj">Myoforge · dernière mise à jour : 9 août 2026</p>
+
+        <div class="encadre arelire">
+          <strong>Reste à compléter :</strong> l'adresse postale de l'éditeur, si
+          elle doit figurer ici. Ce document est une base rédigée avec soin,
+          mais il gagne à être relu par un juriste avant la mise en production.
+        </p>
+
+        <div class="encadre">
+          <strong>Le principe, en une phrase :</strong> vos données de santé restent sur
+          votre téléphone. Rien ne part sans une action de votre part, et rien n'est vendu à
+          personne — jamais.
+        </div>
+
+        <h2>1. Qui est responsable</h2>
+        <p>
+          <strong>Myoforge, éditée par Christophe Holleville</strong> sous le nom commercial <strong>Crystalize Studio</strong>, établi en Belgique.<br />
+          Contact : <strong>CrystalizeStudio@outlook.com</strong>
+        </p>
+        <p>
+          Pour toute question sur vos données, écrivez à cette adresse. Vous pouvez aussi
+          saisir l'Autorité de protection des données belge
+          (<a href="https://www.autoriteprotectiondonnees.be">autoriteprotectiondonnees.be</a>).
+        </p>
+
+        <h2>2. Ce qui reste sur votre téléphone</h2>
+        <p>
+          L'essentiel de Myoforge fonctionne hors ligne. Les données suivantes sont
+          enregistrées <strong>uniquement dans la mémoire de votre appareil</strong> et ne
+          sont transmises à personne :
+        </p>
+        <ul>
+          <li>votre pseudonyme, votre sexe, votre date de naissance, votre taille et votre poids ;</li>
+          <li>votre photo de profil, si vous en ajoutez une ;</li>
+          <li>vos repas, avec leur composition et leurs valeurs nutritionnelles ;</li>
+          <li>vos séances, les exercices validés, votre niveau, votre rang et votre série ;</li>
+          <li>vos réglages : objectifs, matériel, thème, langue, plage horaire de rappel.</li>
+        </ul>
+        <p>
+          Désinstaller l'application efface tout cela. Le bouton
+          <em>Réglages → Effacer toutes mes données</em> fait la même chose sans désinstaller.
+        </p>
+
+        <h2>3. Ce qui est envoyé à un serveur</h2>
+        <p>
+          Trois choses ne peuvent pas se faire depuis un téléphone seul : détenir une clé
+          d'accès à un service d'IA, compter honnêtement un quota, et vérifier ce que fait
+          quelqu'un d'autre. Elles passent donc par un serveur.
+        </p>
+
+        <table>
+          <tr>
+            <th>Donnée</th>
+            <th>Pourquoi</th>
+            <th>Où</th>
+          </tr>
+          <tr>
+            <td>Un identifiant de compte tiré au hasard</td>
+            <td>Rattacher un quota et un abonnement à un appareil. Aucun nom, aucune adresse e-mail, aucun mot de passe.</td>
+            <td>Supabase, Union européenne (Francfort)</td>
+          </tr>
+          <tr>
+            <td>Les dates auxquelles vous ouvrez l'application</td>
+            <td>Vérifier qu'un filleul utilise réellement Myoforge, sans quoi le parrainage serait détournable. Seule la date est enregistrée, jamais ce que vous avez fait.</td>
+            <td>Supabase, Union européenne</td>
+          </tr>
+          <tr>
+            <td>Le nombre de conseils demandés et leur coût</td>
+            <td>Faire respecter les quotas et surveiller la dépense.</td>
+            <td>Supabase, Union européenne</td>
+          </tr>
+        </table>
+
+        <h3>Le conseil personnalisé</h3>
+        <p>
+          Si — et seulement si — vous cochez la case de consentement prévue à cet effet,
+          Myoforge envoie votre question et un <strong>résumé chiffré</strong> de vos trente
+          derniers jours à <strong>Mistral AI</strong>, société française dont les serveurs
+          sont dans l'Union européenne.
+        </p>
+        <p>Ce résumé contient des nombres : âge, taille, poids, objectif, nombre de séances honorées, apports caloriques moyens, évolution du poids. Il ne contient <strong>ni votre pseudonyme, ni votre date de naissance, ni aucune photo, ni aucune date précise</strong>.</p>
+        <p>
+          Ni la question ni la réponse ne sont conservées, ni par nous ni sur votre appareil
+          au-delà de l'affichage. Vous pouvez retirer ce consentement à tout moment en
+          décochant la case : plus rien ne part.
+        </p>
+
+        <h3>L'analyse de photo d'assiette</h3>
+        <p>
+          Si vous utilisez cette fonction, la photo est envoyée à un service d'analyse
+          d'image pour en estimer le contenu, puis supprimée. Elle n'est jamais conservée ni
+          associée à votre compte.
+        </p>
+
+        <h2>4. Health Connect</h2>
+        <p>
+          Avec votre autorisation explicite, Myoforge lit dans Health Connect vos pas, vos
+          calories actives, votre poids et vos séances, afin d'affiner ses estimations. Ces
+          données <strong>restent sur votre téléphone</strong> et ne sont envoyées nulle part.
+        </p>
+        <p>
+          Si vous l'activez, Myoforge peut aussi <strong>écrire</strong> vos séances
+          terminées dans Health Connect, pour qu'elles apparaissent dans Samsung Health ou
+          l'application de votre choix. Cette option est désactivée par défaut. Myoforge
+          n'écrit jamais de calories.
+        </p>
+        <p>
+          Vous pouvez révoquer ces autorisations à tout moment depuis Health Connect, sans
+          passer par Myoforge.
+        </p>
+
+        <h2>5. Publicité</h2>
+        <p>
+          La version gratuite affiche des publicités fournies par Google AdMob. Celles-ci
+          peuvent utiliser un identifiant publicitaire propre à votre appareil, que vous
+          pouvez réinitialiser ou supprimer dans les réglages Android.
+        </p>
+        <div class="encadre">
+          <strong>Aucune de vos données de santé n'est transmise aux régies publicitaires,
+          ni utilisée pour cibler ce qui vous est montré.</strong> Votre poids, vos repas et
+          vos séances ne quittent pas votre téléphone.
+        </div>
+
+        <h2>6. Combien de temps</h2>
+        <ul>
+          <li><strong>Sur votre téléphone :</strong> tant que l'application est installée. Les repas sont effacés au bout de quatre mois.</li>
+          <li><strong>Sur le serveur :</strong> tant que vous utilisez l'application. Un compte sans aucune activité pendant vingt-quatre mois est supprimé.</li>
+          <li><strong>Chez Mistral AI :</strong> le temps de produire la réponse.</li>
+        </ul>
+
+        <h2>7. Vos droits</h2>
+        <p>
+          Le règlement européen vous donne le droit d'accéder à vos données, de les corriger,
+          de les effacer, d'en limiter le traitement et de retirer votre consentement.
+        </p>
+        <ul>
+          <li><strong>Tout effacer :</strong> <em>Réglages → Effacer toutes mes données</em>. C'est immédiat et définitif.</li>
+          <li><strong>Retirer le consentement à l'IA :</strong> décochez la case sur l'écran de conseil.</li>
+          <li><strong>Supprimer votre compte serveur :</strong> écrivez à l'adresse ci-dessus en indiquant votre identifiant de compte, visible dans <em>Réglages → Compte</em>.</li>
+        </ul>
+
+        <h2>8. Enfants</h2>
+        <p>
+          Myoforge est réservée aux personnes de <strong>16 ans et plus</strong> et ne
+          s'adresse pas aux enfants.
+        </p>
+
+        <h2>9. Avertissement</h2>
+        <p>
+          Myoforge n'est <strong>pas un dispositif médical</strong>. Ses estimations
+          reposent sur des formules statistiques générales. En cas de douleur, d'essoufflement
+          anormal ou de pathologie connue, l'avis d'un médecin prime sur tout ce que
+          l'application propose.
+        </p>
+
+        <h2>10. Modifications</h2>
+        <p>
+          Toute modification de ce document sera signalée dans l'application avant d'entrer en
+          vigueur. La date de dernière mise à jour figure en haut de cette page.
+        </p>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════ -->
+      <section lang="en">
+        <h1>Privacy Policy</h1>
+        <p class="maj">Myoforge · last updated: 9 August 2026</p>
+
+        <div class="encadre arelire">
+          <strong>To complete before publication:</strong> publisher name, contact address and
+          e-mail address. This document is a carefully written draft, but it has not been
+          reviewed by a lawyer.
+        </div>
+
+        <p>
+          Myoforge is a health and fitness app. It records your weight, your meals and your
+          workouts: this is <strong>health data</strong>, which European law protects with
+          particular care. This document states exactly what is collected, what stays on your
+          phone, and what leaves it.
+        </p>
+
+        <div class="encadre">
+          <strong>The principle, in one sentence:</strong> your health data stays on your
+          phone. Nothing leaves without an action from you, and nothing is ever sold to
+          anyone.
+        </div>
+
+        <h2>1. Who is responsible</h2>
+        <p>
+          <strong>Myoforge, published by Christophe Holleville</strong> trading as <strong>Crystalize Studio</strong>, established in Belgium.<br />
+          Contact: <strong>CrystalizeStudio@outlook.com</strong>
+        </p>
+        <p>
+          For any question about your data, write to this address. You may also lodge a
+          complaint with the Belgian Data Protection Authority
+          (<a href="https://www.dataprotectionauthority.be">dataprotectionauthority.be</a>).
+        </p>
+
+        <h2>2. What stays on your phone</h2>
+        <p>
+          Most of Myoforge works offline. The following is stored
+          <strong>only in your device's memory</strong> and is sent to no one:
+        </p>
+        <ul>
+          <li>your nickname, sex, date of birth, height and weight;</li>
+          <li>your profile photo, if you add one;</li>
+          <li>your meals, with their contents and nutritional values;</li>
+          <li>your sessions, completed exercises, level, rank and streak;</li>
+          <li>your settings: goals, equipment, theme, language, reminder window.</li>
+        </ul>
+        <p>
+          Uninstalling the app erases all of it. The
+          <em>Settings → Delete all my data</em> button does the same without uninstalling.
+        </p>
+
+        <h2>3. What is sent to a server</h2>
+        <p>
+          Three things cannot be done from a phone alone: holding an access key to an AI
+          service, counting a quota honestly, and verifying what someone else does. Those go
+          through a server.
+        </p>
+
+        <table>
+          <tr>
+            <th>Data</th>
+            <th>Why</th>
+            <th>Where</th>
+          </tr>
+          <tr>
+            <td>A randomly generated account identifier</td>
+            <td>To attach a quota and a subscription to a device. No name, no e-mail, no password.</td>
+            <td>Supabase, European Union (Frankfurt)</td>
+          </tr>
+          <tr>
+            <td>The dates on which you open the app</td>
+            <td>To verify that a referred user genuinely uses Myoforge, without which referrals could be gamed. Only the date is stored, never what you did.</td>
+            <td>Supabase, European Union</td>
+          </tr>
+          <tr>
+            <td>The number of advice requests and their cost</td>
+            <td>To enforce quotas and monitor spending.</td>
+            <td>Supabase, European Union</td>
+          </tr>
+        </table>
+
+        <h3>Personalised advice</h3>
+        <p>
+          If — and only if — you tick the dedicated consent box, Myoforge sends your question
+          and a <strong>numeric summary</strong> of your last thirty days to
+          <strong>Mistral AI</strong>, a French company whose servers are in the European
+          Union.
+        </p>
+        <p>That summary contains numbers: age, height, weight, goal, number of completed sessions, average calorie intake, weight trend. It contains <strong>no nickname, no date of birth, no photo and no precise dates</strong>.</p>
+        <p>
+          Neither the question nor the answer is retained, by us or on your device beyond
+          display. You can withdraw this consent at any time by unticking the box: nothing
+          leaves any more.
+        </p>
+
+        <h3>Plate photo analysis</h3>
+        <p>
+          If you use this feature, the photo is sent to an image analysis service to estimate
+          its contents, then deleted. It is never retained nor linked to your account.
+        </p>
+
+        <h2>4. Health Connect</h2>
+        <p>
+          With your explicit permission, Myoforge reads your steps, active calories, weight
+          and exercise sessions from Health Connect to refine its estimates. This data
+          <strong>stays on your phone</strong> and is sent nowhere.
+        </p>
+        <p>
+          If you enable it, Myoforge can also <strong>write</strong> your completed sessions
+          to Health Connect so they appear in Samsung Health or the app of your choice. This
+          option is off by default. Myoforge never writes calories.
+        </p>
+        <p>
+          You can revoke these permissions at any time from Health Connect, without going
+          through Myoforge.
+        </p>
+
+        <h2>5. Advertising</h2>
+        <p>
+          The free version shows advertising supplied by Google AdMob. It may use an
+          advertising identifier specific to your device, which you can reset or delete in
+          your Android settings.
+        </p>
+        <div class="encadre">
+          <strong>None of your health data is shared with ad networks, nor used to target
+          what you are shown.</strong> Your weight, meals and workouts do not leave your
+          phone.
+        </div>
+
+        <h2>6. How long</h2>
+        <ul>
+          <li><strong>On your phone:</strong> as long as the app is installed. Meals are erased after four months.</li>
+          <li><strong>On the server:</strong> as long as you use the app. An account with no activity for twenty-four months is deleted.</li>
+          <li><strong>At Mistral AI:</strong> the time needed to produce the answer.</li>
+        </ul>
+
+        <h2>7. Your rights</h2>
+        <p>
+          European law gives you the right to access your data, correct it, erase it, restrict
+          its processing and withdraw your consent.
+        </p>
+        <ul>
+          <li><strong>Erase everything:</strong> <em>Settings → Delete all my data</em>. Immediate and permanent.</li>
+          <li><strong>Withdraw AI consent:</strong> untick the box on the advice screen.</li>
+          <li><strong>Delete your server account:</strong> write to the address above, quoting your account identifier from <em>Settings → Account</em>.</li>
+        </ul>
+
+        <h2>8. Children</h2>
+        <p>
+          Myoforge is for people aged <strong>16 and over</strong> and is not directed at
+          children.
+        </p>
+
+        <h2>9. Disclaimer</h2>
+        <p>
+          Myoforge is <strong>not a medical device</strong>. Its estimates rely on general
+          statistical formulas. In case of pain, unusual breathlessness or a known condition,
+          a doctor's advice takes precedence over anything the app suggests.
+        </p>
+
+        <h2>10. Changes</h2>
+        <p>
+          Any change to this document will be announced in the app before taking effect. The
+          date of the last update appears at the top of this page.
+        </p>
+      </section>
+    </main>
+
+    <script>
+      // Bascule de langue, sans dépendance : la page doit rester lisible
+      // même si le script ne s'exécute pas.
+      const boutons = document.querySelectorAll('.langues button');
+      const sections = document.querySelectorAll('section[lang]');
+
+      for (const bouton of boutons) {
+        bouton.addEventListener('click', () => {
+          const cible = bouton.dataset.langue;
+
+          for (const autre of boutons) {
+            autre.setAttribute('aria-pressed', String(autre.dataset.langue === cible));
+          }
+          for (const section of sections) {
+            section.classList.toggle('actif', section.getAttribute('lang') === cible);
+          }
+          document.documentElement.lang = cible;
+        });
+      }
+
+      // Ouvre d'emblée dans la langue du navigateur, si on la couvre.
+      const langue = (navigator.language || 'fr').slice(0, 2);
+      if (langue === 'en') document.querySelector('[data-langue="en"]').click();
+    </script>
+  </body>
+</html>

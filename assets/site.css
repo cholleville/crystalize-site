@@ -1,5 +1,5 @@
 /* Crystalize Studio — feuille de style commune.
-   Les couleurs sont celles de l'application Synaptika (thème azur
+   Les couleurs sont celles de l'application Myoforge (thème azur
    sombre), pour que le site et le produit ne se contredisent pas. */
 
 :root {
@@ -42,7 +42,7 @@ a:hover { text-decoration: none; }
 /* Les tracés de la synapse portent leurs propres remplissages — vif en
    `currentColor`, ombres en noir — parce que l'emblème est taillé et non
    colorié. Une règle `fill` ici écraserait les facettes. */
-.embleme-synaptika { width: 3.4rem; height: 3.4rem; flex: none; color: var(--accent); }
+.embleme-myoforge { width: 3.4rem; height: 3.4rem; flex: none; color: var(--accent); }
 
 .titre-produit { display: flex; align-items: center; gap: 1rem; margin-top: 2.5rem; }
 .titre-produit h1 { margin: 0; }
