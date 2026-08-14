@@ -1,0 +1,151 @@
+/* Crystalize Studio — feuille de style commune.
+   Les couleurs sont celles de l'application Synaptika (thème azur
+   sombre), pour que le site et le produit ne se contredisent pas. */
+
+:root {
+  --fond: #04060c;
+  --panneau: #0a0f1a;
+  --panneau-eleve: #111b2e;
+  --texte: #e8eef7;
+  --doux: #9aa9bd;
+  --faible: #7e8fa6;
+  --accent: #4cc9f0;
+  --bordure: #1b2536;
+  --bordure-vive: #33507a;
+  --succes: #3ddc97;
+  --alerte: #f5c542;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0 1.25rem 5rem;
+  background: var(--fond);
+  color: var(--texte);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+main { max-width: 46rem; margin: 0 auto; }
+
+a { color: var(--accent); }
+a:hover { text-decoration: none; }
+
+/* ── Emblème ─────────────────────────────────────────────────── */
+
+.embleme { width: 2.4rem; height: 2.4rem; fill: currentColor; flex: none; }
+
+.marque {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2rem 0 0;
+  color: var(--accent);
+  text-decoration: none;
+}
+.marque span {
+  font-size: 0.8rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--doux);
+}
+
+/* ── Titres ──────────────────────────────────────────────────── */
+
+h1 {
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 2.5rem 0 0.5rem;
+}
+h2 {
+  font-size: 1.1rem;
+  margin-top: 2.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--bordure);
+  color: var(--accent);
+}
+h3 { font-size: 0.95rem; margin-top: 1.75rem; }
+
+.chapeau { color: var(--doux); font-size: 1.05rem; max-width: 38rem; }
+.maj { color: var(--faible); font-size: 0.85rem; margin-top: 0; }
+
+/* ── Blocs ───────────────────────────────────────────────────── */
+
+.encadre {
+  background: var(--panneau);
+  border: 1px solid var(--bordure);
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+}
+.encadre--alerte { border-left: 3px solid var(--alerte); }
+.encadre--accent { border-left: 3px solid var(--accent); }
+.encadre p:first-child { margin-top: 0; }
+.encadre p:last-child { margin-bottom: 0; }
+
+.cartes { display: grid; gap: 1rem; margin: 2rem 0; }
+@media (min-width: 40rem) { .cartes { grid-template-columns: 1fr 1fr; } }
+
+.carte {
+  display: block;
+  background: var(--panneau);
+  border: 1px solid var(--bordure);
+  border-radius: 0.9rem;
+  padding: 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.carte:hover { border-color: var(--bordure-vive); transform: translateY(-2px); }
+.carte h3 { margin: 0 0 0.35rem; color: var(--accent); font-size: 1.05rem; }
+.carte p { margin: 0; color: var(--doux); font-size: 0.9rem; }
+
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+th, td {
+  text-align: left;
+  padding: 0.6rem 0.5rem;
+  border-bottom: 1px solid var(--bordure);
+  vertical-align: top;
+}
+th { color: var(--doux); font-weight: 600; }
+
+ul { padding-left: 1.2rem; }
+li { margin: 0.4rem 0; }
+
+code {
+  background: var(--panneau);
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+}
+
+/* ── Pied ────────────────────────────────────────────────────── */
+
+footer {
+  max-width: 46rem;
+  margin: 4rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--bordure);
+  color: var(--faible);
+  font-size: 0.85rem;
+}
+footer nav { display: flex; flex-wrap: wrap; gap: 1.25rem; margin-bottom: 1rem; }
+
+/* ── Sélecteur de langue ─────────────────────────────────────── */
+
+.langues { display: flex; gap: 0.5rem; margin: 2rem 0; }
+.langues button {
+  background: transparent;
+  border: 1px solid var(--bordure);
+  color: var(--doux);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.langues button[aria-pressed='true'] { border-color: var(--accent); color: var(--accent); }
+[data-langue] { display: none; }
+[data-langue].actif { display: block; }
