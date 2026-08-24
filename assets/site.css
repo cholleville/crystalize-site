@@ -62,6 +62,17 @@ a:hover { text-decoration: none; }
 }
 
 .bandeau__mot { max-width: min(19rem, 58vw); height: auto; }
+
+/* Le mot-symbole de Myoforge est un trace, pas une image : il est deux fois
+   plus allonge que celui de Crystalize (7,7 contre 4,2), et la meme largeur
+   maximale le rendrait deux fois plus court. On le cale donc sur sa HAUTEUR,
+   celle qu avait le nom en texte. */
+.bandeau__mot--myoforge {
+  max-width: min(22rem, 66vw);
+  height: clamp(1.6rem, 6.2vw, 2.3rem);
+  width: auto;
+  display: block;
+}
 .bandeau__marque { height: clamp(3.4rem, 11vw, 4.6rem); width: auto; flex: none; }
 
 /* Le nom d'un produit, quand aucune image de marque n'existe pour lui. */
