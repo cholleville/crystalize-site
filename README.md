@@ -11,6 +11,8 @@ synaptika/index.html                    l'application
 synaptika/confidentialite/index.html    obligatoire — Play Console
 synaptika/suppression-compte/index.html obligatoire — Play Console
 synaptika/conditions/index.html         conditions d'utilisation
+endogen/confidentialite/index.html      obligatoire — Play Console (28/10/2026)
+endogen/suppression-compte/index.html   obligatoire — Play Console (28/10/2026)
 CNAME                                   crystalizestudio.com
 .nojekyll                               sert les fichiers tels quels
 ```
