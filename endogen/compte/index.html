@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <meta name="referrer" content="no-referrer" />
+    <title>Endogen — Compte</title>
+    <meta name="description" content="Confirmation d'adresse et nouveau mot de passe pour un compte Endogen." />
+    <link rel="stylesheet" href="/assets/site.css" />
+    <style>
+      [data-etat] { display: none; }
+      [data-etat].actif { display: block; }
+      .champ { display: block; margin: 1rem 0 0.4rem; color: var(--doux); font-size: 0.9rem; }
+      .champ input {
+        display: block; width: 100%; margin-top: 0.35rem; padding: 0.7rem 0.8rem;
+        background: var(--panneau); color: var(--texte); border: 1px solid var(--bordure-vive);
+        border-radius: 0.5rem; font-size: 1rem;
+      }
+      .regle { color: var(--faible); font-size: 0.85rem; margin: 0.3rem 0 1rem; }
+      .bouton {
+        display: inline-block; margin-top: 0.5rem; padding: 0.7rem 1.4rem; border: 0;
+        border-radius: 0.6rem; background: var(--accent); color: #04060c; font-weight: 600;
+        font-size: 1rem; cursor: pointer;
+      }
+      .bouton[disabled] { opacity: 0.5; cursor: default; }
+      .erreur { color: var(--alerte); min-height: 1.4em; }
+      .coche { color: var(--succes); }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header class="bandeau">
+        <div>
+          <div class="bandeau__nom">Endogen</div>
+          <a class="bandeau__editeur" href="/endogen/">par Crystalize Studio</a>
+        </div>
+        <img class="bandeau__marque bandeau__icone" src="/endogen/icone.png" alt="" width="192" height="192" />
+      </header>
+
+      <section data-etat="confirme">
+        <h1><span class="coche">✓</span> <span data-t="confirme.titre"></span></h1>
+        <p class="chapeau" data-t="confirme.texte"></p>
+      </section>
+
+      <section data-etat="mdp">
+        <h1 data-t="mdp.titre"></h1>
+        <form id="formulaire" autocomplete="on">
+          <label class="champ"><span data-t="mdp.champ"></span>
+            <input id="mdp1" type="password" autocomplete="new-password" minlength="8" required />
+          </label>
+          <label class="champ"><span data-t="mdp.confirmer"></span>
+            <input id="mdp2" type="password" autocomplete="new-password" minlength="8" required />
+          </label>
+          <p class="regle" data-t="mdp.regle"></p>
+          <p class="erreur" id="erreur" role="alert"></p>
+          <button class="bouton" id="enregistrer" type="submit" data-t="mdp.enregistrer"></button>
+        </form>
+      </section>
+
+      <section data-etat="mdp-fait">
+        <h1><span class="coche">✓</span> <span data-t="fait.titre"></span></h1>
+        <p class="chapeau" data-t="fait.texte"></p>
+      </section>
+
+      <section data-etat="expire">
+        <h1 data-t="expire.titre"></h1>
+        <p class="chapeau" data-t="expire.texte"></p>
+      </section>
+
+      <section data-etat="vide">
+        <h1 data-t="vide.titre"></h1>
+        <p class="chapeau" data-t="vide.texte"></p>
+      </section>
+    </main>
+
+    <footer>
+      <nav>
+        <a href="/">Crystalize Studio</a>
+        <a href="/endogen/">Endogen</a>
+        <a href="/endogen/confidentialite/">Confidentialité</a>
+        <a href="/endogen/suppression-compte/">Suppression de compte</a>
+      </nav>
+      <p>Crystalize Studio — Christophe Holleville, Belgique.</p>
+    </footer>
+
+    <script>
+      // LES LIENS DES COURRIELS D'ENDOGEN ARRIVENT ICI (15/11/2026).
+      //
+      // Supabase vérifie le lien, puis renvoie vers le site avec, après le #,
+      // une session courte et le type du lien. Ce qui suit le # ne part jamais
+      // vers le serveur du site : la session reste dans ce navigateur, sert au
+      // seul changement de mot de passe, et se ferme aussitôt après.
+      // La clé ci-dessous est la clé PUBLIQUE de l'application, la même que
+      // celle de l'APK : elle n'ouvre rien sans la session d'un joueur.
+      const SUPABASE = 'https://yttvbihaufmcoigcppqi.supabase.co';
+      const CLE = 'sb_publishable_9_LkQXvNiPt931mFVCOjRg_8QCy8eOc';
+
+      const TEXTES = {
+        fr: {
+          'confirme.titre': 'Adresse confirmée',
+          'confirme.texte': "Le compte est prêt. De retour dans Endogen, l'appli s'en aperçoit d'elle-même ; sinon, « C'est fait ».",
+          'mdp.titre': 'Nouveau mot de passe',
+          'mdp.champ': 'Nouveau mot de passe',
+          'mdp.confirmer': 'Le même, une seconde fois',
+          'mdp.regle': 'Huit caractères au moins.',
+          'mdp.enregistrer': 'Enregistrer',
+          'mdp.differents': 'Les deux mots de passe diffèrent.',
+          'mdp.court': 'Huit caractères au moins.',
+          'mdp.faible': 'Mot de passe refusé : trop court ou trop courant.',
+          'mdp.meme': "C'est déjà le mot de passe du compte.",
+          'mdp.session': 'Ce lien a expiré : il en faut un nouveau, depuis Endogen.',
+          'mdp.reseau': 'Le serveur ne répond pas. Nouvel essai dans un instant.',
+          'fait.titre': 'Mot de passe changé',
+          'fait.texte': 'Il ne reste qu’à se connecter dans Endogen avec le nouveau.',
+          'expire.titre': 'Lien expiré',
+          'expire.texte': 'Ce lien a expiré ou a déjà servi. Dans Endogen, « Renvoyer le courriel » en fait partir un nouveau.',
+          'vide.titre': 'Compte Endogen',
+          'vide.texte': 'Cette page reçoit les liens que Endogen envoie par courriel : confirmation d’adresse, nouveau mot de passe. Ouverte sans lien, elle n’a rien à faire.',
+        },
+        en: {
+          'confirme.titre': 'Address confirmed',
+          'confirme.texte': 'The account is ready. Back in Endogen, the app notices on its own; otherwise, tap “Done”.',
+          'mdp.titre': 'New password',
+          'mdp.champ': 'New password',
+          'mdp.confirmer': 'The same, once more',
+          'mdp.regle': 'At least eight characters.',
+          'mdp.enregistrer': 'Save',
+          'mdp.differents': 'The two passwords differ.',
+          'mdp.court': 'At least eight characters.',
+          'mdp.faible': 'Password refused: too short or too common.',
+          'mdp.meme': 'This is already the account’s password.',
+          'mdp.session': 'This link has expired: request a new one from Endogen.',
+          'mdp.reseau': 'The server does not respond. Try again in a moment.',
+          'fait.titre': 'Password changed',
+          'fait.texte': 'All that is left is to sign in to Endogen with the new one.',
+          'expire.titre': 'Link expired',
+          'expire.texte': 'This link has expired or was already used. In Endogen, “Send the email again” sends a new one.',
+          'vide.titre': 'Endogen account',
+          'vide.texte': 'This page receives the links Endogen sends by email: address confirmation, new password. Opened without a link, it has nothing to do.',
+        },
+      };
+      const langue = (navigator.language || 'fr').toLowerCase().startsWith('fr') ? 'fr' : 'en';
+      const t = (cle) => TEXTES[langue][cle];
+      document.documentElement.lang = langue;
+      document.querySelectorAll('[data-t]').forEach((el) => { el.textContent = t(el.dataset.t); });
+
+      const montrer = (etat) => {
+        document.querySelectorAll('[data-etat]').forEach((el) => el.classList.toggle('actif', el.dataset.etat === etat));
+      };
+
+      // Ce que porte le lien, puis plus rien dans l'adresse ni l'historique.
+      const p = new URLSearchParams(location.hash.slice(1));
+      history.replaceState(null, '', location.pathname);
+      const jeton = p.get('access_token');
+      const type = p.get('type');
+
+      const fermer = () =>
+        fetch(SUPABASE + '/auth/v1/logout?scope=local', {
+          method: 'POST',
+          headers: { apikey: CLE, Authorization: 'Bearer ' + jeton },
+        }).catch(() => {});
+
+      if (p.get('error') || p.get('error_code')) {
+        montrer('expire');
+      } else if (jeton && type === 'recovery') {
+        montrer('mdp');
+      } else if (jeton) {
+        // Inscription, changement d'adresse : rien à faire ici que le dire.
+        montrer('confirme');
+        fermer();
+      } else {
+        montrer('vide');
+      }
+
+      const erreur = document.getElementById('erreur');
+      const bouton = document.getElementById('enregistrer');
+      document.getElementById('formulaire').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const mdp1 = document.getElementById('mdp1').value;
+        const mdp2 = document.getElementById('mdp2').value;
+        if (mdp1.length < 8) { erreur.textContent = t('mdp.court'); return; }
+        if (mdp1 !== mdp2) { erreur.textContent = t('mdp.differents'); return; }
+        erreur.textContent = '';
+        bouton.disabled = true;
+        try {
+          const reponse = await fetch(SUPABASE + '/auth/v1/user', {
+            method: 'PUT',
+            headers: { apikey: CLE, Authorization: 'Bearer ' + jeton, 'Content-Type': 'application/json' },
+            body: JSON.stringify({ password: mdp1 }),
+          });
+          if (reponse.ok) {
+            await fermer();
+            montrer('mdp-fait');
+            return;
+          }
+          const corps = await reponse.json().catch(() => ({}));
+          const code = String(corps.error_code || corps.code || corps.msg || '');
+          if (/weak_password/i.test(code)) erreur.textContent = t('mdp.faible');
+          else if (/same_password/i.test(code)) erreur.textContent = t('mdp.meme');
+          else if (reponse.status === 401 || reponse.status === 403 || /jwt|session/i.test(code)) erreur.textContent = t('mdp.session');
+          else erreur.textContent = t('mdp.faible');
+        } catch (_) {
+          erreur.textContent = t('mdp.reseau');
+        } finally {
+          bouton.disabled = false;
+        }
+      });
+    </script>
+  </body>
+</html>

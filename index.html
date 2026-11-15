@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Crystalize Studio</title>
     <meta name="description" content="Studio indépendant belge. Applications mobiles soignées, sobres en données." />
+    <script>
+      // Les liens des courriels d'Endogen reviennent sur l'accueil (adresse du site
+      // chez Supabase) : la page du compte s'en occupe, avec ce qui suit le #.
+      if (/(^|[#&])(access_token|error_code|error)=/.test(location.hash)) {
+        location.replace('/endogen/compte/' + location.hash);
+      }
+    </script>
     <link rel="stylesheet" href="/assets/site.css" />
   </head>
   <body>
